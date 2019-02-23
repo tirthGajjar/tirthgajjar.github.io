@@ -8,22 +8,35 @@ plugins:
 permalink: /:year/:month/:day/:title/
 
 defaults:
-  -
-    scope:
+  - scope:
       path: "" # an empty string here means all files in the project
       type: "posts"
     values:
       layout: "post"
 
 topics:
-  - name: CSS
-    web_url: https://github.com/topics/css
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/css/css.png
+  - name: Data visualization
+    web_url: https://github.com/topics/data-visualization
+    image_url: https://user-images.githubusercontent.com/1280389/30084008-9fbc68fc-925e-11e7-891c-18a9b8f6ac6b.png
 
-  - name: Web design
+  - name: Deep learning
+    web_url: https://github.com/topics/deep-learning
+    image_url: https://cdn-images-1.medium.com/max/1600/1*dYjDEI0mLpsCOySKUuX1VA.png
 
-  - name: Sass
-    web_url: https://github.com/topics/sass
-    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/sass/sass.png
+  - name: Azure
+    web_url: https://github.com/topics/azure
+    image_url: https://raw.githubusercontent.com/github/explore/7b1d0500a8bc6dc4bd61c743051b80b1dd552a81/topics/azure/azure.png
+
+  - name: Jupyter Notebook
+    web_url: https://github.com/topics/jupyter-notebook
+    image_url: https://raw.githubusercontent.com/github/explore/149e057770c384ddaba0393b369c2c8f16e433bb/topics/jupyter-notebook/jupyter-notebook.png
+
+  - name: JavaScript
+    web_url: https://github.com/topics/javascript
+    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/javascript/javascript.png
+
+  - name: Chrome extension
+    web_url: https://github.com/topics/chrome-extension
+    image_url: https://raw.githubusercontent.com/github/explore/b137a5e9213f90596eb44fb4cc034982f16cb32a/topics/chrome-extension/chrome-extension.png
 
 theme: jekyll-theme-midnight
