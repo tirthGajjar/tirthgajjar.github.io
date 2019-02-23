@@ -15,13 +15,21 @@ defaults:
       layout: "post"
 
 topics:
-  - name: Data visualization
-    web_url: https://github.com/topics/data-visualization
-    image_url: https://user-images.githubusercontent.com/1280389/30084008-9fbc68fc-925e-11e7-891c-18a9b8f6ac6b.png
-
   - name: Deep learning
     web_url: https://github.com/topics/deep-learning
     image_url: https://cdn-images-1.medium.com/max/1600/1*dYjDEI0mLpsCOySKUuX1VA.png
+
+  - name: Machine learning
+    web_url: https://github.com/topics/machine-learning
+    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/tensorflow/tensorflow.png
+
+  - name: TensorFlow
+    web_url: https://github.com/topics/tensorflow
+    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/tensorflow/tensorflow.png
+
+  - name: Data visualization
+    web_url: https://github.com/topics/data-visualization
+    image_url: https://user-images.githubusercontent.com/1280389/30084008-9fbc68fc-925e-11e7-891c-18a9b8f6ac6b.png
 
   - name: Azure
     web_url: https://github.com/topics/azure
