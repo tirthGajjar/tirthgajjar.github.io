@@ -46,23 +46,23 @@
         {{ user.location }}
       </div>
     {% endif %}
-    <img class = "certIcon" src="/assets/MCSA_MachineLearning.png">
+    {% comment %} <img class = "certIcon" src="/assets/MCSA_MachineLearning.png"> {% endcomment %}
     {% if user.hireable %}
       <span title="Hire me" class="d-inline-block f5 rounded-2 text-white bg-green py-1 px-2">Available for hire</span>
     {% endif %}
-    {% comment %} <div class="{% if site.style == 'dark' %}text-white{% endif %} SectionHeading">CERTIFICATIONS</div>
+    {% comment %} <div class="{% if site.style == 'dark' %}text-white{% endif %} SectionHeading">CERTIFICATIONS</div> {% endcomment %}
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Professional</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Solutions Associate</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">Machine Learning</div>
+    {% comment %} <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">Machine Learning</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-773</span> | Analyzing Big Data with Microsoft R</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-774</span> | Perform Cloud Data Science with Azure Machine Learning</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">SQL 2016 Business Intelligence Development</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-767</span> | Implementing a Data Warehouse using SQL</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">SQL 2016 Database Development</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-761</span> | Querying Data with Transact-SQL</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-762</span> | Developing SQL Databases</div>
+    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-762</span> | Developing SQL Databases</div> {% endcomment %}
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Solutions Expert</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">Data Management and Analytics</div>
+    {% comment %} <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">Data Management and Analytics</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-768 | Developing SQL Data Models</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-778 | Analyzing and Visualizing Data with Microsoft Power BI</div> {% endcomment %}
   </div>
