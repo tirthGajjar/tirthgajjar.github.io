@@ -9,10 +9,19 @@ permalink: /:year/:month/:day/:title/
 
 defaults:
   - scope:
-      path: "" # an empty string here means all files in the project
-      type: "posts"
+    path: "" # an empty string here means all files in the project
+    type: "posts"
     values:
-      layout: "post"
+    layout: "post"
+
+Certifications:
+  - name: Deep learning
+    web_url: https://github.com/topics/deep-learning
+    image_url: https://cdn-images-1.medium.com/max/1600/1*dYjDEI0mLpsCOySKUuX1VA.png
+
+  - name: Machine learning
+    web_url: https://github.com/topics/machine-learning
+    image_url: https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/tensorflow/tensorflow.png
 
 topics:
   - name: Deep learning

@@ -46,10 +46,11 @@
         {{ user.location }}
       </div>
     {% endif %}
+    <img class = "certIcon" src="/assets/MCSA_MachineLearning.png">
     {% if user.hireable %}
       <span title="Hire me" class="d-inline-block f5 rounded-2 text-white bg-green py-1 px-2">Available for hire</span>
     {% endif %}
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} SectionHeading">CERTIFICATIONS</div>
+    {% comment %} <div class="{% if site.style == 'dark' %}text-white{% endif %} SectionHeading">CERTIFICATIONS</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Professional</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Solutions Associate</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">Machine Learning</div>
@@ -63,6 +64,6 @@
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Solutions Expert</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">Data Management and Analytics</div>
     <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-768 | Developing SQL Data Models</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-778 | Analyzing and Visualizing Data with Microsoft Power BI</div>
+    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-778 | Analyzing and Visualizing Data with Microsoft Power BI</div> {% endcomment %}
   </div>
 {% endif %}
