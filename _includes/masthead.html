@@ -12,9 +12,12 @@
 
 {% if include.metadata %}
   <div class="f4 mb-6">
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Professional</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Solutions Associate</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Solutions Expert</div>    
+    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">I am a</div>
+    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Professional & a</div>
+    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Solutions Associate & a</div>
+    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Solutions Expert</div>
+  </div>
+  <div class="f4 mb-6">
     {% if user.name %}
       <div class="{{ metadata_styles }}">
         {% octicon mark-github height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:GitHub %}
@@ -27,7 +30,13 @@
       <div class="{{ metadata_styles }}">
         {% octicon mail height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:email %}
         <a href="mailto:{{ user.email }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
-          Contact me on: {{ user.email }}
+          {{ user.email }}
+        </a>
+      </div>
+      <div class="{{ metadata_styles }}">
+        <img class = "LinkedInIcon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIA0KCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgDQoJeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDExLjU5NSA0MTEuNTk1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MTEuNTk1IDQxMS41OTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCgk8Zz4NCgkJPGc+DQoJCQk8Zz4NCgkJCQk8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjg0LjM5NSwyMTUuODAzYy0wLjgsMS4yLTAuOCwyLjQtMS4yLDRjLTAuNCw1LjIsMy42LDEwLDguOCwxMC40YzUuMiwwLjQsMTAtMy42LDEwLjQtOC44YzAtMS4yLDAtMi40LDAuNC00LjQNCgkJCQljMC0yLDAtMy4yLDAtNC40YzAtMTEuNi0yLTIyLjgtNS42LTMzLjZjLTQuOC0xNC0xMy4yLTI2LjQtMjMuMi0zNi44Yy0xMi40LTEyLjQtMjcuNi0yMS4yLTQ0LjgtMjZjLTgtMi0xNi44LTMuMi0yNS4yLTMuMg0KCQkJCWMtMi44LDAtNS42LDAtOC44LDAuNGMtMi44LDAuNC01LjYsMC44LTguNCwxLjJjLTUuMiwwLjgtOC44LDYtNy42LDEwLjhjMC44LDUuMiw2LDguOCwxMC44LDcuNmMyLjQtMC40LDQuNC0wLjgsNi44LTAuOA0KCQkJCWMwLjQsMCwwLjgsMCwxLjIsMGMyLDAsNC0wLjQsNi0wLjRjMjIsMCw0Mi40LDguOCw1Ni44LDIzLjZjMTQuNCwxNC40LDIzLjIsMzQsMjMuNiw1NnYwLjgNCgkJCQlDMjg0LjM5NSwyMTMuODAzLDI4NC4zOTUsMjE1LjAwMywyODQuMzk1LDIxNS44MDN6Ii8+DQoJCQkJPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTMzNy4xOTUsMjI0LjYwM2MtMC40LDUuMiwzLjYsMTAsOC44LDEwLjRjNS4yLDAuNCwxMC0zLjYsMTAuNC04LjhjMC40LTQuNCwwLjQtOC44LDAuNC0xMy4yYzAtOC44LTAuOC0xNy4yLTItMjUuNg0KCQkJCWMtNS4yLTMyLTIwLjgtNjAuOC00Mi44LTgyLjhjLTI1LjItMjUuMi01OC44LTQxLjYtOTYtNDQuNGMtNC0wLjQtOC40LTAuNC0xMi40LTAuNGMtNC40LDAtOC44LDAtMTMuMiwwLjQNCgkJCQljLTQuNCwwLjQtOC44LDAuOC0xMy4yLDEuNmMtNS4yLDAuOC04LjgsNi03LjYsMTAuOGMwLjgsNS4yLDYsOC44LDEwLjgsNy42YzIuOC0wLjQsNS4yLTAuOCw4LTEuMmMxLjIsMCwyLjQtMC40LDMuNi0wLjQNCgkJCQljNC0wLjQsOC0wLjQsMTEuNi0wLjRjMTMuNiwwLDI2LjQsMiwzOC44LDUuNmMyMS42LDYuNCw0MC44LDE4LDU2LjQsMzMuNmMxMi44LDEyLjgsMjMuMiwyOC40LDMwLDQ1LjJjNiwxNS4yLDkuNiwzMiw5LjYsNDkuNg0KCQkJCWMwLDEuMiwwLDIuOCwwLDRDMzM3LjU5NSwyMTkuNDAzLDMzNy4xOTUsMjIxLjgwMywzMzcuMTk1LDIyNC42MDN6Ii8+DQoJCQkJPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTM1MC43OTUsNjYuMjAzYy0zOC0zOC05MC02MS4yLTE0Ny42LTYxLjJjLTYsMC0xMiwwLjQtMTgsMC44cy0xMiwxLjItMTgsMi40Yy01LjIsMC44LTguOCw2LTcuNiwxMC44DQoJCQkJYzAuOCw1LjIsNiw4LjgsMTAuOCw3LjZjMi44LTAuNCw1LjItMC44LDgtMS4yYzIuOC0wLjQsNS42LTAuOCw4LjQtMC44YzUuNi0wLjQsMTAuOC0wLjgsMTYuNC0wLjhjNTIsMCw5OS4yLDIxLjIsMTMzLjYsNTUuMg0KCQkJCWMzNCwzNCw1NS4yLDgxLjIsNTUuMiwxMzMuNmMwLDIuOCwwLDYsMCw4LjhjMCwyLjQtMC40LDQuOC0wLjQsNy42Yy0wLjQsNS4yLDMuNiwxMCw4LjgsMTAuNGM1LjIsMC40LDEwLTMuNiwxMC40LTguOA0KCQkJCWMwLjQtNiwwLjgtMTIsMC44LTE3LjZDNDExLjU5NSwxNTUuODAzLDM4OC4zOTUsMTAzLjgwMywzNTAuNzk1LDY2LjIwM3oiLz4NCgkJCQk8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMzk2Ljc5NSwzMDguNjAzbC03MC44LTM4Yy0yMy42LTEyLjgtMjQuNC00LjQtNDkuMiwyMmMtNiw2LjQtMTcuMiwyMy4yLTMwLjQsMjBjLTI3LjYtNi44LTc5LjItNDcuMi05Ni02NS42DQoJCQkJYy04LTguOC00Mi40LTUwLjgtNDIuOC02NC40Yy0wLjgtMjAuOCw0NC44LTMxLjIsMzAtNzAuOGwtMzEuNi03MC44Yy0yOS42LTY4LTExMi40LDQwLjgtMTA1LjYsOTEuNg0KCQkJCWMxNy42LDEyNS4yLDIzNy4yLDMyNy42LDM1OS42LDI2MC44QzM4Ny4xOTUsMzc4LjIwMyw0MjMuOTk1LDMyNS4wMDMsMzk2Ljc5NSwzMDguNjAzeiIvPg0KCQkJPC9nPg0KCQk8L2c+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KPC9zdmc+DQo=">        
+        <a href="tele:8511455160" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+          +91 85 114 55 160
         </a>
       </div>
     {% endif %}
