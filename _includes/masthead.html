@@ -1,88 +1,87 @@
 {% if site.layout == 'stacked' %}
-  {% assign metadata_styles = 'd-md-inline-block mr-3' %}
+{% assign metadata_styles = 'd-md-inline-block mr-3' %}
 {% else %}
-  {% assign metadata_styles = 'd-flex flex-items-center mb-3' %}
+{% assign metadata_styles = 'd-flex flex-items-center mb-3' %}
 {% endif %}
-
 <img src="{{ user.avatar_url }}" class="circle mb-3" style="max-width: 150px;">
 <h1 class="{% if site.style == 'dark' %}text-white{% endif %} mb-2 lh-condensed">{% if user.name %}{{ user.name }}{% else %}{{ user.login }}{% endif %}</h1>
 <div class="f4 mb-6">
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">I am</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">A Microsoft Certified Professional &</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">A Microsoft Certified Solutions Associate &</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">A Microsoft Certified Solutions Expert</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">I am</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">A Microsoft Certified Professional &</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">A Microsoft Certified Solutions Associate &</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">A Microsoft Certified Solutions Expert</div>
+   <p class="{% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
+      And {{ user.bio }}
+   </p>
 </div>
-<p class="mb-3 f4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">
-  {{ user.bio }}
-</p>
-
 {% if include.metadata %}
-  <div class="f4 mb-6">
-    {% if user.name %}
-      <div class="{{ metadata_styles }}">
-        {% octicon mark-github height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:GitHub %}
-        <a href="https://github.com/{{ user.login }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
-          @{{ user.login }}
-        </a>
-      </div>
-    {% endif %}
-    {% if user.email %}
-      <div class="{{ metadata_styles }}">
-        {% octicon mail height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:email %}
-        <a href="mailto:{{ user.email }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
-          {{ user.email }}
-        </a>
-      </div>
-      <div class="{{ metadata_styles }}">
-        <img class = "LinkedInIcon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIA0KCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgDQoJeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDExLjU5NSA0MTEuNTk1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MTEuNTk1IDQxMS41OTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCgk8Zz4NCgkJPGc+DQoJCQk8Zz4NCgkJCQk8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjg0LjM5NSwyMTUuODAzYy0wLjgsMS4yLTAuOCwyLjQtMS4yLDRjLTAuNCw1LjIsMy42LDEwLDguOCwxMC40YzUuMiwwLjQsMTAtMy42LDEwLjQtOC44YzAtMS4yLDAtMi40LDAuNC00LjQNCgkJCQljMC0yLDAtMy4yLDAtNC40YzAtMTEuNi0yLTIyLjgtNS42LTMzLjZjLTQuOC0xNC0xMy4yLTI2LjQtMjMuMi0zNi44Yy0xMi40LTEyLjQtMjcuNi0yMS4yLTQ0LjgtMjZjLTgtMi0xNi44LTMuMi0yNS4yLTMuMg0KCQkJCWMtMi44LDAtNS42LDAtOC44LDAuNGMtMi44LDAuNC01LjYsMC44LTguNCwxLjJjLTUuMiwwLjgtOC44LDYtNy42LDEwLjhjMC44LDUuMiw2LDguOCwxMC44LDcuNmMyLjQtMC40LDQuNC0wLjgsNi44LTAuOA0KCQkJCWMwLjQsMCwwLjgsMCwxLjIsMGMyLDAsNC0wLjQsNi0wLjRjMjIsMCw0Mi40LDguOCw1Ni44LDIzLjZjMTQuNCwxNC40LDIzLjIsMzQsMjMuNiw1NnYwLjgNCgkJCQlDMjg0LjM5NSwyMTMuODAzLDI4NC4zOTUsMjE1LjAwMywyODQuMzk1LDIxNS44MDN6Ii8+DQoJCQkJPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTMzNy4xOTUsMjI0LjYwM2MtMC40LDUuMiwzLjYsMTAsOC44LDEwLjRjNS4yLDAuNCwxMC0zLjYsMTAuNC04LjhjMC40LTQuNCwwLjQtOC44LDAuNC0xMy4yYzAtOC44LTAuOC0xNy4yLTItMjUuNg0KCQkJCWMtNS4yLTMyLTIwLjgtNjAuOC00Mi44LTgyLjhjLTI1LjItMjUuMi01OC44LTQxLjYtOTYtNDQuNGMtNC0wLjQtOC40LTAuNC0xMi40LTAuNGMtNC40LDAtOC44LDAtMTMuMiwwLjQNCgkJCQljLTQuNCwwLjQtOC44LDAuOC0xMy4yLDEuNmMtNS4yLDAuOC04LjgsNi03LjYsMTAuOGMwLjgsNS4yLDYsOC44LDEwLjgsNy42YzIuOC0wLjQsNS4yLTAuOCw4LTEuMmMxLjIsMCwyLjQtMC40LDMuNi0wLjQNCgkJCQljNC0wLjQsOC0wLjQsMTEuNi0wLjRjMTMuNiwwLDI2LjQsMiwzOC44LDUuNmMyMS42LDYuNCw0MC44LDE4LDU2LjQsMzMuNmMxMi44LDEyLjgsMjMuMiwyOC40LDMwLDQ1LjJjNiwxNS4yLDkuNiwzMiw5LjYsNDkuNg0KCQkJCWMwLDEuMiwwLDIuOCwwLDRDMzM3LjU5NSwyMTkuNDAzLDMzNy4xOTUsMjIxLjgwMywzMzcuMTk1LDIyNC42MDN6Ii8+DQoJCQkJPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTM1MC43OTUsNjYuMjAzYy0zOC0zOC05MC02MS4yLTE0Ny42LTYxLjJjLTYsMC0xMiwwLjQtMTgsMC44cy0xMiwxLjItMTgsMi40Yy01LjIsMC44LTguOCw2LTcuNiwxMC44DQoJCQkJYzAuOCw1LjIsNiw4LjgsMTAuOCw3LjZjMi44LTAuNCw1LjItMC44LDgtMS4yYzIuOC0wLjQsNS42LTAuOCw4LjQtMC44YzUuNi0wLjQsMTAuOC0wLjgsMTYuNC0wLjhjNTIsMCw5OS4yLDIxLjIsMTMzLjYsNTUuMg0KCQkJCWMzNCwzNCw1NS4yLDgxLjIsNTUuMiwxMzMuNmMwLDIuOCwwLDYsMCw4LjhjMCwyLjQtMC40LDQuOC0wLjQsNy42Yy0wLjQsNS4yLDMuNiwxMCw4LjgsMTAuNGM1LjIsMC40LDEwLTMuNiwxMC40LTguOA0KCQkJCWMwLjQtNiwwLjgtMTIsMC44LTE3LjZDNDExLjU5NSwxNTUuODAzLDM4OC4zOTUsMTAzLjgwMywzNTAuNzk1LDY2LjIwM3oiLz4NCgkJCQk8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMzk2Ljc5NSwzMDguNjAzbC03MC44LTM4Yy0yMy42LTEyLjgtMjQuNC00LjQtNDkuMiwyMmMtNiw2LjQtMTcuMiwyMy4yLTMwLjQsMjBjLTI3LjYtNi44LTc5LjItNDcuMi05Ni02NS42DQoJCQkJYy04LTguOC00Mi40LTUwLjgtNDIuOC02NC40Yy0wLjgtMjAuOCw0NC44LTMxLjIsMzAtNzAuOGwtMzEuNi03MC44Yy0yOS42LTY4LTExMi40LDQwLjgtMTA1LjYsOTEuNg0KCQkJCWMxNy42LDEyNS4yLDIzNy4yLDMyNy42LDM1OS42LDI2MC44QzM4Ny4xOTUsMzc4LjIwMyw0MjMuOTk1LDMyNS4wMDMsMzk2Ljc5NSwzMDguNjAzeiIvPg0KCQkJPC9nPg0KCQk8L2c+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KPC9zdmc+DQo=">        
-        <a href="tele:8511455160" {% if site.style == 'dark' %}class="text-white"{% endif %}>
-          +91 85 114 55 160
-        </a>
-      </div>
-    {% endif %}
-    <div class="{{ metadata_styles }}">
-        <img class = "LinkedInIcon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgaGVpZ2h0PSIxMDAwIgogICB3aWR0aD0iMTAwMCIKICAgdmVyc2lvbj0iMSIKICAgaWQ9InN2ZzMwNjgiCiAgIGlua3NjYXBlOnZlcnNpb249IjAuNDguNSByMTAwNDAiCiAgIHNvZGlwb2RpOmRvY25hbWU9ImxpbmtlZGluLnN2ZyI+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhMzA3NiI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGRlZnMKICAgICBpZD0iZGVmczMwNzQiIC8+CiAgPHNvZGlwb2RpOm5hbWVkdmlldwogICAgIHBhZ2Vjb2xvcj0iI2ZmZmZmZiIKICAgICBib3JkZXJjb2xvcj0iIzY2NjY2NiIKICAgICBib3JkZXJvcGFjaXR5PSIxIgogICAgIG9iamVjdHRvbGVyYW5jZT0iMTAiCiAgICAgZ3JpZHRvbGVyYW5jZT0iMTAiCiAgICAgZ3VpZGV0b2xlcmFuY2U9IjEwIgogICAgIGlua3NjYXBlOnBhZ2VvcGFjaXR5PSIwIgogICAgIGlua3NjYXBlOnBhZ2VzaGFkb3c9IjIiCiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxMjc2IgogICAgIGlua3NjYXBlOndpbmRvdy1oZWlnaHQ9Ijc1NSIKICAgICBpZD0ibmFtZWR2aWV3MzA3MiIKICAgICBzaG93Z3JpZD0iZmFsc2UiCiAgICAgaW5rc2NhcGU6em9vbT0iMC4yMzYiCiAgICAgaW5rc2NhcGU6Y3g9Ii0yNTAiCiAgICAgaW5rc2NhcGU6Y3k9IjUwMCIKICAgICBpbmtzY2FwZTp3aW5kb3cteD0iNSIKICAgICBpbmtzY2FwZTp3aW5kb3cteT0iMSIKICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIwIgogICAgIGlua3NjYXBlOmN1cnJlbnQtbGF5ZXI9InN2ZzMwNjgiIC8+CiAgPHBhdGgKICAgICBkPSJNMTk1Ljg3NyAuMjVjLTEwNy43MTcgMCAtMTk1Ljg3NyA4OC4xNTggLTE5NS44NzcgMTk1Ljg3N2wwIDYwNy44NDFjMCAxMDcuNzE3IDg4LjE1OCAxOTUuODQ1IDE5NS44NzcgMTk1Ljg0NWw2MDcuODQxIDBjMTA3LjcxOCAwIDE5NS44NDUgLTg4LjEyNyAxOTUuODQ1IC0xOTUuODQ1bDAgLTYwNy44NDFjMCAtMTA3LjcxNyAtODguMTI3IC0xOTUuODc3IC0xOTUuODQ1IC0xOTUuODc3bC02MDcuODQxIDB6bTQ5LjI2NiAxNjQuOTQ4YzUxLjY0OCAwIDgzLjQ2MSAzMy45MDYgODQuNDQzIDc4LjQ3NSAwIDQzLjU4NSAtMzIuNzk3IDc4LjQ0NCAtODUuNDQyIDc4LjQ0NGwtLjk2OSAwYy01MC42NjUgMCAtODMuNDEyIC0zNC44NTcgLTgzLjQxMiAtNzguNDQ0IDAgLTQ0LjU2OCAzMy43MzggLTc4LjQ3NSA4NS4zNzkgLTc4LjQ3NXptNDQ1LjA4IDIwOC4zMWM5OS4zMjkgMCAxNzMuNzkgNjQuOTIyIDE3My43OSAyMDQuNDM2bDAgMjYwLjQ0OWwtMTUwLjk1MyAwbDAgLTI0Mi45ODdjMCAtNjEuMDYgLTIxLjg0NyAtMTAyLjcxOCAtNzYuNDc2IC0xMDIuNzE4IC00MS43MDQgMCAtNjYuNTYyIDI4LjA3OCAtNzcuNDc2IDU1LjIwMiAtMy45ODcgOS43MDQgLTQuOTY3IDIzLjI1NyAtNC45NjcgMzYuODMybDAgMjUzLjY3MWwtMTUwLjk1MyAwczEuOTgxIC00MTEuNjEzIDAgLTQ1NC4yMzNsMTUwLjk4NCAwbDAgNjQuMzI0YzIwLjA2IC0zMC45NSA1NS45NDIgLTc0Ljk3NyAxMzYuMDUxIC03NC45Nzd6bS01MjEuNTU2IDEwLjY4NWwxNTAuOTUzIDBsMCA0NTQuMjAybC0xNTAuOTUzIDBsMCAtNDU0LjIwMnoiCiAgICAgaWQ9InBhdGgzMDcwIgogICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4KPC9zdmc+Cg==">
-        <a href="https://www.linkedin.com/in/tirth-gajjar/" {% if site.style == 'dark' %} class="text-white"{% endif %}>
-          Know about my work experience on LinkedIn.com
-        </a>
-      </div>
-    <div class="{{ metadata_styles }}">
-        <img class = "KaggelIcon" src="data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+S2FnZ2xlIGljb248L3RpdGxlPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xOC44MjUgMjMuODU5Yy0uMDIyLjA5Mi0uMTE3LjE0MS0uMjgxLjE0MWgtMy4xMzljLS4xODcgMC0uMzUxLS4wODItLjQ5Mi0uMjQ4bC01LjE3OC02LjU4OS0xLjQ0OCAxLjM3NHY1LjExMWMwIC4yMzUtLjExNy4zNTItLjM1MS4zNTJINS41MDVjLS4yMzYgMC0uMzU0LS4xMTctLjM1NC0uMzUyVi4zNTNjMC0uMjMzLjExOC0uMzUzLjM1NC0uMzUzaDIuNDMxYy4yMzQgMCAuMzUxLjEyLjM1MS4zNTN2MTQuMzQzbDYuMjAzLTYuMjcyYy4xNjUtLjE2NS4zMy0uMjQ2LjQ5NS0uMjQ2aDMuMjM5Yy4xNDQgMCAuMjM2LjA2LjI4NS4xOC4wNDYuMTQ5LjAzNC4yNTUtLjAzNi4zMTVsLTYuNTU1IDYuMzQ0IDYuODM2IDguNTA3Yy4wOTUuMTA0LjExNy4yMDguMDcuMzU4Ii8+PC9zdmc+">
-        <a href="https://www.kaggle.com/tirthgajjar" {% if site.style == 'dark' %} class="text-white"{% endif %}>
-          See my kernels Kaggle.com
-        </a>
-      </div>
-    <div class="{{ metadata_styles }}">
-        <img class = "MediumIcon" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjI1MDAiIHdpZHRoPSIyNTAwIiANCiAgICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTUgMTk1Ij4NCiAgICA8ZyBmaWxsPSJub25lIj4NCiAgICAgICAgPHBhdGggZD0iTTAgMGgxOTV2MTk1SDB6IiBmaWxsPSIjZmZmIi8+DQogICAgICAgIDxwYXRoIGQ9Ik00Ni41MzQgNjUuMjE2YTUuMDc0IDUuMDc0IDAgMCAwLTEuNjUxLTQuMjhMMzIuNjUgNDYuMlY0NGgzNy45OGwyOS4zNTUgNjQuMzgxTDEyNS43OTUgNDRIMTYydjIuMjAxbC0xMC40NTggMTAuMDI3YTMuMDU3IDMuMDU3IDAgMCAwLTEuMTYyIDIuOTM1djczLjY3NGEzLjA1NyAzLjA1NyAwIDAgMCAxLjE2MiAyLjkzNWwxMC4yMTMgMTAuMDI3VjE0OGgtNTEuMzcydi0yLjIwMWwxMC41OC0xMC4yNzJjMS4wNC0xLjA0IDEuMDQtMS4zNDUgMS4wNC0yLjkzNFY3My4wNDJsLTI5LjQxNyA3NC43MTNIODguNjFMNTQuMzYyIDczLjA0MnY1MC4wNzRhNi45MDggNi45MDggMCAwIDAgMS44OTYgNS43NDdsMTMuNzYgMTYuNjkxdjIuMjAxSDMxdi0yLjJsMTMuNzYtMTYuNjkyYTYuNjYzIDYuNjYzIDAgMCAwIDEuNzc0LTUuNzQ3eiIgZmlsbD0iIzEyMTAwZSIvPg0KICAgIDwvZz4NCjwvc3ZnPg==">
-        <a href="https://medium.com/@tirthgajjar" {% if site.style == 'dark' %} class="text-white"{% endif %}>
-          Read my stories on Medium.com
-        </a>
-      </div>
-    
-    {% if user.location %}
-      <div class="{{ metadata_styles }} {% if site.style == 'dark' %}text-white{% endif %}">
-        {% octicon location height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:Location %}
-        {{ user.location }}
-      </div>
-    {% endif %}
-    {% comment %} <img class = "certIcon" src="/assets/MCSA_MachineLearning.png"> {% endcomment %}
-    {% if user.hireable %}
-      <span title="Hire me" class="d-inline-block f5 rounded-2 text-white bg-green py-1 px-2">Available for hire</span>
-    {% endif %}
-    {% comment %} <div class="{% if site.style == 'dark' %}text-white{% endif %} SectionHeading">CERTIFICATIONS</div> 
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Professional</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Solutions Associate</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">Machine Learning</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-773</span> | Analyzing Big Data with Microsoft R</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-774</span> | Perform Cloud Data Science with Azure Machine Learning</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">SQL 2016 Business Intelligence Development</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-767</span> | Implementing a Data Warehouse using SQL</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">SQL 2016 Database Development</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-761</span> | Querying Data with Transact-SQL</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-762</span> | Developing SQL Databases</div> 
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Solutions Expert</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">Data Management and Analytics</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-768 | Developing SQL Data Models</div>
-    <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-778 | Analyzing and Visualizing Data with Microsoft Power BI</div> {% endcomment %}
-  </div>
+<div class="f4 mb-6">
+   {% if user.name %}
+   <div class="{{ metadata_styles }}">
+      {% octicon mark-github height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:GitHub %}
+      <a href="https://github.com/{{ user.login }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+      @{{ user.login }}
+      </a>
+   </div>
+   {% endif %}
+   {% if user.email %}
+   <div class="{{ metadata_styles }}">
+      {% octicon mail height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:email %}
+      <a href="mailto:{{ user.email }}" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+      {{ user.email }}
+      </a>
+   </div>
+   <div class="{{ metadata_styles }}">
+      <img class = "LinkedInIcon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIA0KCXhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgDQoJeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNDExLjU5NSA0MTEuNTk1IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MTEuNTk1IDQxMS41OTU7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCgk8Zz4NCgkJPGc+DQoJCQk8Zz4NCgkJCQk8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjg0LjM5NSwyMTUuODAzYy0wLjgsMS4yLTAuOCwyLjQtMS4yLDRjLTAuNCw1LjIsMy42LDEwLDguOCwxMC40YzUuMiwwLjQsMTAtMy42LDEwLjQtOC44YzAtMS4yLDAtMi40LDAuNC00LjQNCgkJCQljMC0yLDAtMy4yLDAtNC40YzAtMTEuNi0yLTIyLjgtNS42LTMzLjZjLTQuOC0xNC0xMy4yLTI2LjQtMjMuMi0zNi44Yy0xMi40LTEyLjQtMjcuNi0yMS4yLTQ0LjgtMjZjLTgtMi0xNi44LTMuMi0yNS4yLTMuMg0KCQkJCWMtMi44LDAtNS42LDAtOC44LDAuNGMtMi44LDAuNC01LjYsMC44LTguNCwxLjJjLTUuMiwwLjgtOC44LDYtNy42LDEwLjhjMC44LDUuMiw2LDguOCwxMC44LDcuNmMyLjQtMC40LDQuNC0wLjgsNi44LTAuOA0KCQkJCWMwLjQsMCwwLjgsMCwxLjIsMGMyLDAsNC0wLjQsNi0wLjRjMjIsMCw0Mi40LDguOCw1Ni44LDIzLjZjMTQuNCwxNC40LDIzLjIsMzQsMjMuNiw1NnYwLjgNCgkJCQlDMjg0LjM5NSwyMTMuODAzLDI4NC4zOTUsMjE1LjAwMywyODQuMzk1LDIxNS44MDN6Ii8+DQoJCQkJPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTMzNy4xOTUsMjI0LjYwM2MtMC40LDUuMiwzLjYsMTAsOC44LDEwLjRjNS4yLDAuNCwxMC0zLjYsMTAuNC04LjhjMC40LTQuNCwwLjQtOC44LDAuNC0xMy4yYzAtOC44LTAuOC0xNy4yLTItMjUuNg0KCQkJCWMtNS4yLTMyLTIwLjgtNjAuOC00Mi44LTgyLjhjLTI1LjItMjUuMi01OC44LTQxLjYtOTYtNDQuNGMtNC0wLjQtOC40LTAuNC0xMi40LTAuNGMtNC40LDAtOC44LDAtMTMuMiwwLjQNCgkJCQljLTQuNCwwLjQtOC44LDAuOC0xMy4yLDEuNmMtNS4yLDAuOC04LjgsNi03LjYsMTAuOGMwLjgsNS4yLDYsOC44LDEwLjgsNy42YzIuOC0wLjQsNS4yLTAuOCw4LTEuMmMxLjIsMCwyLjQtMC40LDMuNi0wLjQNCgkJCQljNC0wLjQsOC0wLjQsMTEuNi0wLjRjMTMuNiwwLDI2LjQsMiwzOC44LDUuNmMyMS42LDYuNCw0MC44LDE4LDU2LjQsMzMuNmMxMi44LDEyLjgsMjMuMiwyOC40LDMwLDQ1LjJjNiwxNS4yLDkuNiwzMiw5LjYsNDkuNg0KCQkJCWMwLDEuMiwwLDIuOCwwLDRDMzM3LjU5NSwyMTkuNDAzLDMzNy4xOTUsMjIxLjgwMywzMzcuMTk1LDIyNC42MDN6Ii8+DQoJCQkJPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTM1MC43OTUsNjYuMjAzYy0zOC0zOC05MC02MS4yLTE0Ny42LTYxLjJjLTYsMC0xMiwwLjQtMTgsMC44cy0xMiwxLjItMTgsMi40Yy01LjIsMC44LTguOCw2LTcuNiwxMC44DQoJCQkJYzAuOCw1LjIsNiw4LjgsMTAuOCw3LjZjMi44LTAuNCw1LjItMC44LDgtMS4yYzIuOC0wLjQsNS42LTAuOCw4LjQtMC44YzUuNi0wLjQsMTAuOC0wLjgsMTYuNC0wLjhjNTIsMCw5OS4yLDIxLjIsMTMzLjYsNTUuMg0KCQkJCWMzNCwzNCw1NS4yLDgxLjIsNTUuMiwxMzMuNmMwLDIuOCwwLDYsMCw4LjhjMCwyLjQtMC40LDQuOC0wLjQsNy42Yy0wLjQsNS4yLDMuNiwxMCw4LjgsMTAuNGM1LjIsMC40LDEwLTMuNiwxMC40LTguOA0KCQkJCWMwLjQtNiwwLjgtMTIsMC44LTE3LjZDNDExLjU5NSwxNTUuODAzLDM4OC4zOTUsMTAzLjgwMywzNTAuNzk1LDY2LjIwM3oiLz4NCgkJCQk8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMzk2Ljc5NSwzMDguNjAzbC03MC44LTM4Yy0yMy42LTEyLjgtMjQuNC00LjQtNDkuMiwyMmMtNiw2LjQtMTcuMiwyMy4yLTMwLjQsMjBjLTI3LjYtNi44LTc5LjItNDcuMi05Ni02NS42DQoJCQkJYy04LTguOC00Mi40LTUwLjgtNDIuOC02NC40Yy0wLjgtMjAuOCw0NC44LTMxLjIsMzAtNzAuOGwtMzEuNi03MC44Yy0yOS42LTY4LTExMi40LDQwLjgtMTA1LjYsOTEuNg0KCQkJCWMxNy42LDEyNS4yLDIzNy4yLDMyNy42LDM1OS42LDI2MC44QzM4Ny4xOTUsMzc4LjIwMyw0MjMuOTk1LDMyNS4wMDMsMzk2Ljc5NSwzMDguNjAzeiIvPg0KCQkJPC9nPg0KCQk8L2c+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KCTxnPg0KCTwvZz4NCgk8Zz4NCgk8L2c+DQoJPGc+DQoJPC9nPg0KPC9zdmc+DQo=">        
+      <a href="tele:8511455160" {% if site.style == 'dark' %}class="text-white"{% endif %}>
+      +91 85 114 55 160
+      </a>
+   </div>
+   {% endif %}
+   <div class="{{ metadata_styles }}">
+      <img class = "LinkedInIcon" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgaGVpZ2h0PSIxMDAwIgogICB3aWR0aD0iMTAwMCIKICAgdmVyc2lvbj0iMSIKICAgaWQ9InN2ZzMwNjgiCiAgIGlua3NjYXBlOnZlcnNpb249IjAuNDguNSByMTAwNDAiCiAgIHNvZGlwb2RpOmRvY25hbWU9ImxpbmtlZGluLnN2ZyI+CiAgPG1ldGFkYXRhCiAgICAgaWQ9Im1ldGFkYXRhMzA3NiI+CiAgICA8cmRmOlJERj4KICAgICAgPGNjOldvcmsKICAgICAgICAgcmRmOmFib3V0PSIiPgogICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2Uvc3ZnK3htbDwvZGM6Zm9ybWF0PgogICAgICAgIDxkYzp0eXBlCiAgICAgICAgICAgcmRmOnJlc291cmNlPSJodHRwOi8vcHVybC5vcmcvZGMvZGNtaXR5cGUvU3RpbGxJbWFnZSIgLz4KICAgICAgICA8ZGM6dGl0bGU+PC9kYzp0aXRsZT4KICAgICAgPC9jYzpXb3JrPgogICAgPC9yZGY6UkRGPgogIDwvbWV0YWRhdGE+CiAgPGRlZnMKICAgICBpZD0iZGVmczMwNzQiIC8+CiAgPHNvZGlwb2RpOm5hbWVkdmlldwogICAgIHBhZ2Vjb2xvcj0iI2ZmZmZmZiIKICAgICBib3JkZXJjb2xvcj0iIzY2NjY2NiIKICAgICBib3JkZXJvcGFjaXR5PSIxIgogICAgIG9iamVjdHRvbGVyYW5jZT0iMTAiCiAgICAgZ3JpZHRvbGVyYW5jZT0iMTAiCiAgICAgZ3VpZGV0b2xlcmFuY2U9IjEwIgogICAgIGlua3NjYXBlOnBhZ2VvcGFjaXR5PSIwIgogICAgIGlua3NjYXBlOnBhZ2VzaGFkb3c9IjIiCiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxMjc2IgogICAgIGlua3NjYXBlOndpbmRvdy1oZWlnaHQ9Ijc1NSIKICAgICBpZD0ibmFtZWR2aWV3MzA3MiIKICAgICBzaG93Z3JpZD0iZmFsc2UiCiAgICAgaW5rc2NhcGU6em9vbT0iMC4yMzYiCiAgICAgaW5rc2NhcGU6Y3g9Ii0yNTAiCiAgICAgaW5rc2NhcGU6Y3k9IjUwMCIKICAgICBpbmtzY2FwZTp3aW5kb3cteD0iNSIKICAgICBpbmtzY2FwZTp3aW5kb3cteT0iMSIKICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIwIgogICAgIGlua3NjYXBlOmN1cnJlbnQtbGF5ZXI9InN2ZzMwNjgiIC8+CiAgPHBhdGgKICAgICBkPSJNMTk1Ljg3NyAuMjVjLTEwNy43MTcgMCAtMTk1Ljg3NyA4OC4xNTggLTE5NS44NzcgMTk1Ljg3N2wwIDYwNy44NDFjMCAxMDcuNzE3IDg4LjE1OCAxOTUuODQ1IDE5NS44NzcgMTk1Ljg0NWw2MDcuODQxIDBjMTA3LjcxOCAwIDE5NS44NDUgLTg4LjEyNyAxOTUuODQ1IC0xOTUuODQ1bDAgLTYwNy44NDFjMCAtMTA3LjcxNyAtODguMTI3IC0xOTUuODc3IC0xOTUuODQ1IC0xOTUuODc3bC02MDcuODQxIDB6bTQ5LjI2NiAxNjQuOTQ4YzUxLjY0OCAwIDgzLjQ2MSAzMy45MDYgODQuNDQzIDc4LjQ3NSAwIDQzLjU4NSAtMzIuNzk3IDc4LjQ0NCAtODUuNDQyIDc4LjQ0NGwtLjk2OSAwYy01MC42NjUgMCAtODMuNDEyIC0zNC44NTcgLTgzLjQxMiAtNzguNDQ0IDAgLTQ0LjU2OCAzMy43MzggLTc4LjQ3NSA4NS4zNzkgLTc4LjQ3NXptNDQ1LjA4IDIwOC4zMWM5OS4zMjkgMCAxNzMuNzkgNjQuOTIyIDE3My43OSAyMDQuNDM2bDAgMjYwLjQ0OWwtMTUwLjk1MyAwbDAgLTI0Mi45ODdjMCAtNjEuMDYgLTIxLjg0NyAtMTAyLjcxOCAtNzYuNDc2IC0xMDIuNzE4IC00MS43MDQgMCAtNjYuNTYyIDI4LjA3OCAtNzcuNDc2IDU1LjIwMiAtMy45ODcgOS43MDQgLTQuOTY3IDIzLjI1NyAtNC45NjcgMzYuODMybDAgMjUzLjY3MWwtMTUwLjk1MyAwczEuOTgxIC00MTEuNjEzIDAgLTQ1NC4yMzNsMTUwLjk4NCAwbDAgNjQuMzI0YzIwLjA2IC0zMC45NSA1NS45NDIgLTc0Ljk3NyAxMzYuMDUxIC03NC45Nzd6bS01MjEuNTU2IDEwLjY4NWwxNTAuOTUzIDBsMCA0NTQuMjAybC0xNTAuOTUzIDBsMCAtNDU0LjIwMnoiCiAgICAgaWQ9InBhdGgzMDcwIgogICAgIHN0eWxlPSJmaWxsOiNmZmZmZmY7ZmlsbC1vcGFjaXR5OjE7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLW9wYWNpdHk6MSIgLz4KPC9zdmc+Cg==">
+      <a href="https://www.linkedin.com/in/tirth-gajjar/" {% if site.style == 'dark' %} class="text-white"{% endif %}>
+      Know about my work experience on LinkedIn.com
+      </a>
+   </div>
+   <div class="{{ metadata_styles }}">
+      <img class = "KaggelIcon" src="data:image/svg+xml;base64,PHN2ZyByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+S2FnZ2xlIGljb248L3RpdGxlPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0xOC44MjUgMjMuODU5Yy0uMDIyLjA5Mi0uMTE3LjE0MS0uMjgxLjE0MWgtMy4xMzljLS4xODcgMC0uMzUxLS4wODItLjQ5Mi0uMjQ4bC01LjE3OC02LjU4OS0xLjQ0OCAxLjM3NHY1LjExMWMwIC4yMzUtLjExNy4zNTItLjM1MS4zNTJINS41MDVjLS4yMzYgMC0uMzU0LS4xMTctLjM1NC0uMzUyVi4zNTNjMC0uMjMzLjExOC0uMzUzLjM1NC0uMzUzaDIuNDMxYy4yMzQgMCAuMzUxLjEyLjM1MS4zNTN2MTQuMzQzbDYuMjAzLTYuMjcyYy4xNjUtLjE2NS4zMy0uMjQ2LjQ5NS0uMjQ2aDMuMjM5Yy4xNDQgMCAuMjM2LjA2LjI4NS4xOC4wNDYuMTQ5LjAzNC4yNTUtLjAzNi4zMTVsLTYuNTU1IDYuMzQ0IDYuODM2IDguNTA3Yy4wOTUuMTA0LjExNy4yMDguMDcuMzU4Ii8+PC9zdmc+">
+      <a href="https://www.kaggle.com/tirthgajjar" {% if site.style == 'dark' %} class="text-white"{% endif %}>
+      See my kernels Kaggle.com
+      </a>
+   </div>
+   <div class="{{ metadata_styles }}">
+      <img class = "MediumIcon" src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjI1MDAiIHdpZHRoPSIyNTAwIiANCiAgICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxOTUgMTk1Ij4NCiAgICA8ZyBmaWxsPSJub25lIj4NCiAgICAgICAgPHBhdGggZD0iTTAgMGgxOTV2MTk1SDB6IiBmaWxsPSIjZmZmIi8+DQogICAgICAgIDxwYXRoIGQ9Ik00Ni41MzQgNjUuMjE2YTUuMDc0IDUuMDc0IDAgMCAwLTEuNjUxLTQuMjhMMzIuNjUgNDYuMlY0NGgzNy45OGwyOS4zNTUgNjQuMzgxTDEyNS43OTUgNDRIMTYydjIuMjAxbC0xMC40NTggMTAuMDI3YTMuMDU3IDMuMDU3IDAgMCAwLTEuMTYyIDIuOTM1djczLjY3NGEzLjA1NyAzLjA1NyAwIDAgMCAxLjE2MiAyLjkzNWwxMC4yMTMgMTAuMDI3VjE0OGgtNTEuMzcydi0yLjIwMWwxMC41OC0xMC4yNzJjMS4wNC0xLjA0IDEuMDQtMS4zNDUgMS4wNC0yLjkzNFY3My4wNDJsLTI5LjQxNyA3NC43MTNIODguNjFMNTQuMzYyIDczLjA0MnY1MC4wNzRhNi45MDggNi45MDggMCAwIDAgMS44OTYgNS43NDdsMTMuNzYgMTYuNjkxdjIuMjAxSDMxdi0yLjJsMTMuNzYtMTYuNjkyYTYuNjYzIDYuNjYzIDAgMCAwIDEuNzc0LTUuNzQ3eiIgZmlsbD0iIzEyMTAwZSIvPg0KICAgIDwvZz4NCjwvc3ZnPg==">
+      <a href="https://medium.com/@tirthgajjar" {% if site.style == 'dark' %} class="text-white"{% endif %}>
+      Read my stories on Medium.com
+      </a>
+   </div>
+   {% if user.location %}
+   <div class="{{ metadata_styles }} {% if site.style == 'dark' %}text-white{% endif %}">
+      {% octicon location height:20 class:"mr-2 v-align-middle" fill:{{ icon_color }} aria-label:Location %}
+      {{ user.location }}
+   </div>
+   {% endif %}
+   {% comment %} <img class = "certIcon" src="/assets/MCSA_MachineLearning.png"> {% endcomment %}
+   {% if user.hireable %}
+   <span title="Hire me" class="d-inline-block f5 rounded-2 text-white bg-green py-1 px-2">Available for hire</span>
+   {% endif %}
+   {% comment %} 
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} SectionHeading">CERTIFICATIONS</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Professional</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Solutions Associate</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">Machine Learning</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-773</span> | Analyzing Big Data with Microsoft R</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-774</span> | Perform Cloud Data Science with Azure Machine Learning</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">SQL 2016 Business Intelligence Development</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-767</span> | Implementing a Data Warehouse using SQL</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">SQL 2016 Database Development</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-761</span> | Querying Data with Transact-SQL</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-762</span> | Developing SQL Databases</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertificationTitle">Microsoft Certified Solutions Expert</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiedSkill">Data Management and Analytics</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-768 | Developing SQL Data Models</div>
+   <div class="{% if site.style == 'dark' %}text-white{% endif %} CertifiationExam"><span class="CertificationExamCode">70-778 | Analyzing and Visualizing Data with Microsoft Power BI</div>
+   {% endcomment %}
+</div>
 {% endif %}
