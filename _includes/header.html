@@ -16,9 +16,17 @@
     <meta charset="utf-8">
     <title>{{ user.name }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Pixel Code for https://app.proofcred.com/ --> 
-    <script async src="https://app.proofcred.com/pixel/e923b643d17892f6ef1cf27b77219946"></script>
-    <!-- END Pixel Code -->
+    
+<!--Notifia -->
+<script>(function (d,s,i) {
+        var j = d.createElement('script');
+        j.async = true;
+        j.id = 'notifia';
+        j.src = 'https://static.notifia.io/widget.js';
+        j.setAttribute('initialize',i);
+        d.head.appendChild(j);
+    })( document, 'script', 'Nt_3G4hSSOdcD');</script>
+<!-- End Notifia -->
     <link href="{{ "/assets/styles.css" | absolute_url }}" rel="stylesheet" type="text/css">
   </head>
   <body class="bg-white" {% if site.style == 'dark' %}style="background-color: #2f363d !important"{% endif %}>
